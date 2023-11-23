@@ -82,9 +82,9 @@ new class extends Component
                     @endif
                 </div>
                 @if ($sticky->is($editing)) 
-                <livewire:stickies.edit :sticky="$sticky" :key="$sticky->id" />
+                    <livewire:stickies.edit :sticky="$sticky" :key="$sticky->id" />
                 @else
-                <p class="mt-4 text-lg text-gray-900">{{ $sticky->message }}</p>
+                    <p class="mt-4 text-lg text-gray-900">{{ $sticky->message }}</p>
                 @endif 
             </div>
         </div>
