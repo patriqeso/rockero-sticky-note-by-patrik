@@ -15,6 +15,8 @@ new class extends Component
         auth()->user()->stickies()->create($validated);
  
         $this->message = '';
+
+        $this->dispatch('sticky-created'); 
     } 
 
 }; ?>
