@@ -46,6 +46,15 @@ new class extends Component
         $this->editing = null;
  
         $this->getStickies();
+    }
+    
+    public function delete(Sticky $sticky): void
+    {
+        $this->authorize('delete', $sticky);
+ 
+        $sticky->delete();
+ 
+        $this->getStickies();
     } 
 }; ?>
 
@@ -77,6 +86,9 @@ new class extends Component
                                 <x-dropdown-link wire:click="edit({{ $sticky->id }})">
                                     {{ __('Edit') }}
                                 </x-dropdown-link>
+                                <x-dropdown-link wire:click="delete({{ $sticky->id }})" wire:confirm="Are you sure to delete this sticky?"> 
+                                    {{ __('Delete') }}
+                                </x-dropdown-link> 
                             </x-slot>
                         </x-dropdown>
                     @endif
