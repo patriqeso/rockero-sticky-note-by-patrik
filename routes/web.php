@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StickyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome');
+
+Route::get('stickies', [StickyController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('stickies'); 
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
