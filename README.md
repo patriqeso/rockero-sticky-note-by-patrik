@@ -40,3 +40,13 @@ php artisan migrate
 php artisan serve
 npm run dev
 ```
+
+## Criteria
+> create a simple application:
+- with Login
+- Create a post (just a title and description)
+- Show posts (only from the logged in user)
+- Test the creation and display of posts (using Pest)
+- Bonus: Delete post + test
+- During programming, use as much as possible from here : https://laraverse.net/wiki/architecture 
+- And also use Livewire in addition to Laravel. Use the starter-kit: https://github.com/rockero-cz/laravel-starter-kit
